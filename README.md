@@ -3,7 +3,7 @@
 Welcome to the Power Learning Project Software Engineering Scholarship program repository. This repository contains materials and assignments for the Intro to Python course.
 
 ## Table of Contents
-- [Introduction](#introduction)
+- [Basic-Calculator-Program.py](Basic Calculator Program)
 - [Course Materials](#course-materials)
 - [Assignments](#assignments)
 - [Contributing](#contributing)
