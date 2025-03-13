@@ -1,31 +1,31 @@
 # Step 1: Define operation functions
-DEFINE function add(a, b)
-    RETURN a + b
+def add(a, b):
+    return a + b
 
-DEFINE function subtract(a, b)
-    RETURN a - b
+def subtract(a, b):
+    return a - b
 
-DEFINE function multiply(a, b)
-    RETURN a * b
+def multiply(a, b):
+    return a * b
 
-DEFINE function divide(a, b)
-    RETURN a / b  // Ensure that b is not zero when calling
+def divide(a, b):
+    if b != 0:
+        return a / b
+    else:
+        return "Error: Division by zero is not allowed."
 
 # Step 2: Map operations to functions in a dictionary
-SET operations = { "+": add, "-": subtract, "*": multiply, "/": divide }
+operations = {"+": add, "-": subtract, "*": multiply, "/": divide}
 
 # Step 3: Get user input
-PRINT "Enter the first number:"
-SET first_number = USER_INPUT
-
-PRINT "Enter the second number:"
-SET second_number = USER_INPUT
-
-PRINT "Enter the operation (+, -, *, /):"
-SET operation = USER_INPUT
+first_number = float(input("Enter the first number: "))
+second_number = float(input("Enter the second number: "))
+operation = input("Enter the operation (+, -, *, /): ")
 
 # Step 4: Perform the operation using the dictionary
-SET result = operations[operation](first_number, second_number)
-
-# Step 5: Display the result
-PRINT "The result of", first_number, operation, second_number, "is", result
+if operation in operations:
+    result = operations[operation](first_number, second_number)
+    # Step 5: Display the result
+    print(f"The result of {first_number} {operation} {second_number} is {result}")
+else:
+    print("Invalid operation! Please choose from +, -, *, /.")
